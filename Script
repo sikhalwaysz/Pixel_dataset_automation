@@ -1,0 +1,271 @@
+import re
+import os
+import pandas as pd
+import numpy as np
+import pymannkendall as mk
+from statsmodels.stats.stattools import durbin_watson
+from scipy.stats import ttest_1samp
+from statsmodels.tsa.stattools import adfuller
+
+# Regular expression patterns to match GC log entries and launch time entries
+gc_pattern = re.compile(r'(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})\s+(\d+)\s+(\d+)\s+\w\s+([^:]+):.*?paused\s+([\d.]+[a-zA-Z]+).*?total\s+([\d.]+[a-zA-Z]+)')
+launch_pattern = re.compile(r'(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})\s+(\d+)\s+(\d+)\s+\w+\s+ActivityTaskManager: Displayed\s+([^/]+/[^:]+):\s+\+\s*(\d+)ms')
+
+# Placeholder for parsed GC data
+parsed_gc_data = {
+    'timestamp': [],
+    'process_id': [],
+    'thread_id': [],
+    'log_type': [],
+    'gc_pause_time_ms': [],
+    'gc_total_duration_ms': [],
+    'parent_process': []
+}
+
+# Placeholder for parsed launch time data
+parsed_launch_data = {
+    'timestamp': [],
+    'process_id': [],
+    'thread_id': [],
+    'parent_process': [],
+    'activity_name': [],
+    'launch_time_ms': []
+}
+
+results = []
+
+def convert_to_ms(time_str):
+    """Convert time string with unit to milliseconds and round to three decimal places."""
+    unit_multipliers = {'ms': 1, 's': 1000, 'us': 0.001}
+    match = re.match(r'([\d.]+)([a-zA-Z]+)', time_str)
+    if match:
+        value, unit = match.groups()
+        value_in_ms = float(value) * unit_multipliers.get(unit, 1)
+        return round(value_in_ms, 3)
+    return None
+
+def get_parent_process(activity_name):
+    """Extract the parent process name from the full activity name."""
+    return activity_name.split('/')[0]
+
+def parse_logcat(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            gc_match = gc_pattern.match(line)
+            launch_match = launch_pattern.match(line)
+            if gc_match:
+                timestamp, process_id, thread_id, parent_process, gc_pause_time, gc_total_duration = gc_match.groups()
+                parsed_gc_data['timestamp'].append(timestamp)
+                parsed_gc_data['process_id'].append(process_id)
+                parsed_gc_data['thread_id'].append(thread_id)
+                parsed_gc_data['log_type'].append('GC')
+                parsed_gc_data['gc_pause_time_ms'].append(convert_to_ms(gc_pause_time))
+                parsed_gc_data['gc_total_duration_ms'].append(convert_to_ms(gc_total_duration))
+                parsed_gc_data['parent_process'].append(parent_process)
+            elif launch_match:
+                timestamp, process_id, thread_id, activity_name, launch_time = launch_match.groups()
+                parent_process = get_parent_process(activity_name)
+                parsed_launch_data['timestamp'].append(timestamp)
+                parsed_launch_data['process_id'].append(process_id)
+                parsed_launch_data['thread_id'].append(thread_id)
+                parsed_launch_data['parent_process'].append(parent_process)
+                parsed_launch_data['activity_name'].append(activity_name)
+                parsed_launch_data['launch_time_ms'].append(int(launch_time))
+
+def save_gc_metrics_to_csv(gc_output_dir):
+    gc_df = pd.DataFrame(parsed_gc_data)
+    
+    # Create directory if it doesn't exist
+    os.makedirs(gc_output_dir, exist_ok=True)
+    
+    # Calculate total GC metrics for each process_id
+    gc_summary = gc_df.groupby('process_id').agg({
+        'gc_pause_time_ms': 'sum',
+        'gc_total_duration_ms': 'sum'
+    }).reset_index()
+
+    # Identify top 10 processes with highest total GC metrics
+    top_10_processes = gc_summary.nlargest(10, 'gc_total_duration_ms')['process_id']
+
+    # Filter GC data for these top 10 processes
+    top_gc_df = gc_df[gc_df['process_id'].isin(top_10_processes)]
+
+    # Saving separate DataFrames for each process ID
+    for process_id, group_df in top_gc_df.groupby('process_id'):
+        sanitized_process_id = process_id.replace("/", "_").replace(".", "_")
+        output_file = f"{gc_output_dir}/{sanitized_process_id}_gc_metrics.csv"
+        group_df.to_csv(output_file, index=False)
+
+def save_launch_metrics_to_csv(launch_output_dir):
+    launch_df = pd.DataFrame(parsed_launch_data)
+    
+    # Create directory if it doesn't exist
+    os.makedirs(launch_output_dir, exist_ok=True)
+    
+    # Saving separate DataFrames for each parent process
+    for parent_process, group_df in launch_df.groupby('parent_process'):
+        sanitized_parent_process = parent_process.replace("/", "_").replace(".", "_")
+        output_file = f"{launch_output_dir}/{sanitized_parent_process}_launch_times.csv"
+        group_df.to_csv(output_file, index=False)
+
+def check_autocorrelation(data):
+    if len(data) < 2:
+        return None
+    dw_stat = durbin_watson(data)
+    return dw_stat
+
+def apply_mann_kendall_test(data):
+    if len(data) < 2:
+        return None
+    result = mk.original_test(data)
+    return result
+
+def apply_modified_mann_kendall_test(data):
+    if len(data) < 2:
+        return None
+    result = mk.hamed_rao_modification_test(data)
+    return result
+
+def calculate_sens_slope(data):
+    if len(data) < 2:
+        return None
+    result = mk.sens_slope(data)
+    return result
+
+def apply_t_test(data):
+    if len(data) < 2 or np.std(data) == 0:
+        return None
+    t_stat, p_value = ttest_1samp(data, 0)
+    return {'t_stat': t_stat, 'p_value': p_value}
+
+def apply_adfuller_test(data):
+    if len(data) < 2 or np.std(data) == 0:
+        return None
+    result = adfuller(data)
+    return result
+
+def analyze_trend(data, label):
+    if len(data) < 2:
+        results.append({
+            'label': label,
+            'error': 'Not enough data to perform analysis'
+        })
+        return
+
+    autocorr_stat = check_autocorrelation(data)
+    if autocorr_stat is None:
+        results.append({
+            'label': label,
+            'error': 'Not enough data to calculate Durbin-Watson statistic'
+        })
+        return
+
+    result = {
+        'label': label,
+        'durbin_watson': autocorr_stat,
+        'mann_kendall': None,
+        'modified_mann_kendall': None,
+        'sens_slope': None,
+        't_test': None,
+        'adfuller': None,
+        'prediction': None
+    }
+    results.append(result)
+
+    try:
+        if 1.5 < autocorr_stat < 2.5:
+            trend_result = apply_mann_kendall_test(data)
+            result['mann_kendall'] = trend_result
+        else:
+            trend_result = apply_modified_mann_kendall_test(data)
+            result['modified_mann_kendall'] = trend_result
+        
+        if trend_result is not None and trend_result.trend != 'no trend':
+            sens_slope_result = calculate_sens_slope(data)
+            result['sens_slope'] = sens_slope_result
+            if sens_slope_result is not None and sens_slope_result.slope > 0:
+                result['prediction'] = f"Warning: {label} shows an increasing trend (slope = {sens_slope_result.slope}), indicating potential software aging."
+            else:
+                result['prediction'] = f"{label} does not show significant signs of software aging."
+
+        t_test_result = apply_t_test(data)
+        if t_test_result is not None:
+            result['t_test'] = t_test_result
+            if t_test_result['p_value'] < 0.05:
+                if result['prediction'] is None:
+                    result['prediction'] = f"T-Test indicates a significant change in {label}."
+                else:
+                    result['prediction'] += f" T-Test indicates a significant change in {label}."
+
+        adfuller_result = apply_adfuller_test(data)
+        if adfuller_result is not None:
+            result['adfuller'] = adfuller_result
+            if adfuller_result[1] < 0.05:
+                if result['prediction'] is None:
+                    result['prediction'] = f"ADF Test indicates non-stationarity in {label}, suggesting a potential trend."
+                else:
+                    result['prediction'] += f" ADF Test indicates non-stationarity in {label}, suggesting a potential trend."
+
+    except Exception as e:
+        result['error'] = str(e)
+
+def analyze_gc_metrics(gc_df):
+    # Calculate total GC metrics for each process_id
+    gc_summary = gc_df.groupby('process_id').agg({
+        'gc_pause_time_ms': 'sum',
+        'gc_total_duration_ms': 'sum'
+    }).reset_index()
+
+    # Identify top 10 processes with highest total GC metrics
+    top_10_processes = gc_summary.nlargest(10, 'gc_total_duration_ms')['process_id']
+
+    # Filter GC data for these top 10 processes
+    top_gc_df = gc_df[gc_df['process_id'].isin(top_10_processes)]
+
+    # Analyze trends for each process ID
+    for process_id, group_df in top_gc_df.groupby('process_id'):
+        analyze_trend(group_df['gc_pause_time_ms'], f"GC Pause Time for PID: {process_id}")
+        analyze_trend(group_df['gc_total_duration_ms'], f"GC Total Duration for PID: {process_id}")
+
+def analyze_launch_times(launch_df):
+    # Analyzing trends for launch times of each parent process
+    for parent_process, group_df in launch_df.groupby('parent_process'):
+        analyze_trend(group_df['launch_time_ms'], f"Launch Time for {parent_process}")
+
+def generate_text_report(results, output_file):
+    with open(output_file, 'w') as file:
+        for result in results:
+            file.write(f"Metric: {result['label']}\n")
+            file.write(f"Durbin-Watson: {result.get('durbin_watson', 'N/A')}\n")
+            file.write(f"Mann-Kendall: {result.get('mann_kendall', 'N/A')}\n")
+            file.write(f"Modified Mann-Kendall: {result.get('modified_mann_kendall', 'N/A')}\n")
+            file.write(f"Sen's Slope: {result.get('sens_slope', 'N/A')}\n")
+            file.write(f"T-Test: {result.get('t_test', 'N/A')}\n")
+            file.write(f"ADF Test: {result.get('adfuller', 'N/A')}\n")
+            file.write(f"Prediction: {result.get('prediction', 'N/A')}\n")
+            if 'error' in result:
+                file.write(f"Error: {result['error']}\n")
+            file.write("\n" + "-"*50 + "\n\n")
+
+# Usage
+file_path = 'log1.txt'
+gc_output_dir = 'gc__14'
+launch_output_dir = 'lt__14'
+text_report_file = 'report.txt'
+
+parse_logcat(file_path)
+save_gc_metrics_to_csv(gc_output_dir)
+save_launch_metrics_to_csv(launch_output_dir)
+
+# Load the data for trend tests
+gc_df = pd.DataFrame(parsed_gc_data)
+launch_df = pd.DataFrame(parsed_launch_data)
+
+# Analyze trends for GC metrics
+analyze_gc_metrics(gc_df)
+
+# Analyze trends for launch times
+analyze_launch_times(launch_df)
+
+# Generate text report
+generate_text_report(results, text_report_file)
