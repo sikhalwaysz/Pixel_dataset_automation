@@ -1,0 +1,440 @@
+Metric: GC Pause Time for PID: 13120
+Durbin-Watson: 0.9697185290241225
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.36648815384002376, z=-0.9030711135250091, Tau=-0.08767274737423991, s=-793.0, var_s=769141.8839244193, slope=-0.0003200000000000003, intercept=0.30244000000000004)
+Sen's Slope: None
+T-Test: {'t_stat': 11.692862746039467, 'p_value': 3.308834002491576e-22}
+ADF Test: (-11.26166121059111, 1.6164110355126002e-20, 0, 134, {'1%': -3.480118600110386, '5%': -2.8833618426136196, '10%': -2.578407034974382}, 91.51331156440338)
+Prediction: T-Test indicates a significant change in GC Pause Time for PID: 13120. ADF Test indicates non-stationarity in GC Pause Time for PID: 13120, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 13120
+Durbin-Watson: 1.7337327033594756
+Mann-Kendall: Mann_Kendall_Test(trend='no trend', h=False, p=0.6048826953142572, z=0.5173917819145986, Tau=0.030182421227197345, s=273.0, var_s=276375.0, slope=0.07584297520661151, intercept=166.40452066115702)
+Modified Mann-Kendall: None
+Sen's Slope: None
+T-Test: {'t_stat': 4.6816974927887625, 'p_value': 6.88358010875407e-06}
+ADF Test: (-11.596668995892935, 2.7100709948864636e-21, 0, 134, {'1%': -3.480118600110386, '5%': -2.8833618426136196, '10%': -2.578407034974382}, 1972.6590184920165)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 13120. ADF Test indicates non-stationarity in GC Total Duration for PID: 13120, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 13632
+Durbin-Watson: 1.6766127812586225
+Mann-Kendall: Mann_Kendall_Test(trend='increasing', h=True, p=0.01360538789557375, z=2.4675166892975615, Tau=0.13984616921386475, s=1400.0, var_s=321451.3333333333, slope=0.0008295454545454543, intercept=0.25251704545454545)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=0.0008295454545454543, intercept=0.25251704545454545)
+T-Test: {'t_stat': 5.121454846677785, 'p_value': 9.777172842310081e-07}
+ADF Test: (-11.723953097775812, 1.3919239841434573e-21, 0, 141, {'1%': -3.4776006742422374, '5%': -2.882265832283648, '10%': -2.5778219289774156}, 392.214384926718)
+Prediction: Warning: GC Pause Time for PID: 13632 shows an increasing trend (slope = 0.0008295454545454543), indicating potential software aging. T-Test indicates a significant change in GC Pause Time for PID: 13632. ADF Test indicates non-stationarity in GC Pause Time for PID: 13632, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 13632
+Durbin-Watson: 0.45733457542033
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='increasing', h=True, p=1.4577228313328305e-12, z=7.078454843812362, Tau=0.38927180101887926, s=3897.0, var_s=302943.0298598741, slope=2.565479166666666, intercept=67.76121875000004)
+Sen's Slope: Sens_Slope_Test(slope=2.565479166666666, intercept=67.76121875000004)
+T-Test: {'t_stat': 15.82019804205511, 'p_value': 4.694285053907756e-33}
+ADF Test: (-0.34179432392197073, 0.9193728823021314, 14, 127, {'1%': -3.482920063655088, '5%': -2.884580323367261, '10%': -2.5790575441750883}, 1758.9381149362664)
+Prediction: Warning: GC Total Duration for PID: 13632 shows an increasing trend (slope = 2.565479166666666), indicating potential software aging. T-Test indicates a significant change in GC Total Duration for PID: 13632.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 1904
+Durbin-Watson: 1.585929549588201
+Mann-Kendall: Mann_Kendall_Test(trend='decreasing', h=True, p=0.015914827913035223, z=-2.410862939989504, Tau=-0.029664906421493907, s=-128075.0, var_s=2822129283.6666665, slope=-2.1567596002104175e-05, intercept=0.670682798527091)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=-2.1567596002104175e-05, intercept=0.670682798527091)
+T-Test: {'t_stat': 29.65825958793859, 'p_value': 2.523604901238148e-169}
+ADF Test: (-25.228026573097843, 0.0, 3, 2935, {'1%': -3.4325799926649294, '5%': -2.8625252631133096, '10%': -2.567294482817665}, 13215.345035730938)
+Prediction: GC Pause Time for PID: 1904 does not show significant signs of software aging. T-Test indicates a significant change in GC Pause Time for PID: 1904. ADF Test indicates non-stationarity in GC Pause Time for PID: 1904, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 1904
+Durbin-Watson: 0.8251728746251661
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='decreasing', h=True, p=0.003945932274187491, z=-2.8824520181476054, Tau=-0.19870287402739292, s=-857878.0, var_s=88578001077.16008, slope=-0.08533712984054669, intercept=470.35724373576306)
+Sen's Slope: Sens_Slope_Test(slope=-0.08533712984054669, intercept=470.35724373576306)
+T-Test: {'t_stat': 50.8780602817551, 'p_value': 0.0}
+ADF Test: (-4.713930303165246, 7.922573319743484e-05, 22, 2916, {'1%': -3.432594535616418, '5%': -2.8625316861103984, '10%': -2.567297902368278}, 44516.999298671275)
+Prediction: GC Total Duration for PID: 1904 does not show significant signs of software aging. T-Test indicates a significant change in GC Total Duration for PID: 1904. ADF Test indicates non-stationarity in GC Total Duration for PID: 1904, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 20589
+Durbin-Watson: 1.687636321150696
+Mann-Kendall: Mann_Kendall_Test(trend='decreasing', h=True, p=0.008582385051643993, z=-2.6282561999183027, Tau=-0.06625248730511889, s=-16348.0, var_s=38684833.333333336, slope=-9.333333333333305e-05, intercept=0.3447599999999999)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=-9.333333333333305e-05, intercept=0.3447599999999999)
+T-Test: {'t_stat': 10.233026549113495, 'p_value': 5.290815053208768e-23}
+ADF Test: (-17.6111189419278, 3.879175728643612e-30, 1, 701, {'1%': -3.4397129207385357, '5%': -2.8656718422599923, '10%': -2.568970295481694}, 3301.2982356798966)
+Prediction: GC Pause Time for PID: 20589 does not show significant signs of software aging. T-Test indicates a significant change in GC Pause Time for PID: 20589. ADF Test indicates non-stationarity in GC Pause Time for PID: 20589, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 20589
+Durbin-Watson: 0.5163241514928211
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.7037580325989832, z=-0.3802524445424795, Tau=-0.029596398017450648, s=-7303.0, var_s=368756452.06985873, slope=-0.05616138328530259, intercept=475.3696455331412)
+Sen's Slope: None
+T-Test: {'t_stat': 33.94235042051218, 'p_value': 3.408309030184145e-150}
+ADF Test: (-3.2165149648175557, 0.01904841045056916, 16, 686, {'1%': -3.439918423003054, '5%': -2.865762386436236, '10%': -2.5690185346241785}, 10166.822715637109)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 20589. ADF Test indicates non-stationarity in GC Total Duration for PID: 20589, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 23627
+Durbin-Watson: 1.832399874769351
+Mann-Kendall: Mann_Kendall_Test(trend='increasing', h=True, p=5.0134995517314707e-05, z=4.054996770178147, Tau=0.11288633737723859, s=18759.0, var_s=21398929.0, slope=0.00010857864357864359, intercept=0.20272935064935066)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=0.00010857864357864359, intercept=0.20272935064935066)
+T-Test: {'t_stat': 7.854233965414292, 'p_value': 1.9783071223585248e-14}
+ADF Test: (-24.30626043358867, 0.0, 0, 576, {'1%': -3.441753961421302, '5%': -2.866570853087291, '10%': -2.5694492998890817}, 2287.660426223014)
+Prediction: Warning: GC Pause Time for PID: 23627 shows an increasing trend (slope = 0.00010857864357864359), indicating potential software aging. T-Test indicates a significant change in GC Pause Time for PID: 23627. ADF Test indicates non-stationarity in GC Pause Time for PID: 23627, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 23627
+Durbin-Watson: 0.41604589971355616
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='increasing', h=True, p=1.2962384622117185e-05, z=4.3607391084871505, Tau=0.1981814461775467, s=32933.0, var_s=57031658.86289138, slope=0.17569092276036724, intercept=154.80001424501424)
+Sen's Slope: Sens_Slope_Test(slope=0.17569092276036724, intercept=154.80001424501424)
+T-Test: {'t_stat': 40.29294821909485, 'p_value': 9.962068578942065e-170}
+ADF Test: (-4.919342119008741, 3.197387263668426e-05, 7, 569, {'1%': -3.4418948967017475, '5%': -2.8666329082535222, '10%': -2.569482366838501}, 7111.972650648929)
+Prediction: Warning: GC Total Duration for PID: 23627 shows an increasing trend (slope = 0.17569092276036724), indicating potential software aging. T-Test indicates a significant change in GC Total Duration for PID: 23627. ADF Test indicates non-stationarity in GC Total Duration for PID: 23627, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 25071
+Durbin-Watson: 1.9398569589151065
+Mann-Kendall: Mann_Kendall_Test(trend='decreasing', h=True, p=0.026400597138573678, z=-2.2202677588167665, Tau=-0.10379438112658881, s=-2213.0, var_s=992566.3333333334, slope=-0.0003250000000000003, intercept=0.28847500000000004)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=-0.0003250000000000003, intercept=0.28847500000000004)
+T-Test: {'t_stat': 2.6337642804795327, 'p_value': 0.0090852729474593}
+ADF Test: (-14.321079173239182, 1.140996264565196e-26, 0, 206, {'1%': -3.4624988216864776, '5%': -2.8756749365852587, '10%': -2.5743041549627677}, 1105.0631524412802)
+Prediction: GC Pause Time for PID: 25071 does not show significant signs of software aging. T-Test indicates a significant change in GC Pause Time for PID: 25071. ADF Test indicates non-stationarity in GC Pause Time for PID: 25071, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 25071
+Durbin-Watson: 0.45539075068907076
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.5043822894226246, z=0.667610443747677, Tau=0.06946203273767647, s=1481.0, var_s=4914475.642424875, slope=0.5032013422818791, intercept=419.1092617449665)
+Sen's Slope: None
+T-Test: {'t_stat': 22.249476637037198, 'p_value': 1.0865055572706578e-56}
+ADF Test: (-4.868214412507278, 4.019842683764209e-05, 2, 204, {'1%': -3.462818103072159, '5%': -2.8758145932936805, '10%': -2.574378674548251}, 2755.4669545267416)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 25071. ADF Test indicates non-stationarity in GC Total Duration for PID: 25071, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 25288
+Durbin-Watson: 1.0941992794184663
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.21838747461095043, z=-1.2308272682488997, Tau=-0.07516993202718912, s=-564.0, var_s=209229.33333333334, slope=-0.00038181818181818114, intercept=0.317290909090909)
+Sen's Slope: None
+T-Test: {'t_stat': 1.7964573861404114, 'p_value': 0.07489632096564246}
+ADF Test: (-35.49588180168898, 0.0, 0, 122, {'1%': -3.4851223522012855, '5%': -2.88553750045158, '10%': -2.5795685622144586}, 700.2515546775322)
+Prediction: ADF Test indicates non-stationarity in GC Pause Time for PID: 25288, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 25288
+Durbin-Watson: 1.654072006251636
+Mann-Kendall: Mann_Kendall_Test(trend='no trend', h=False, p=0.9337949206825564, z=-0.08307120636682497, Tau=-0.005197920831667333, s=-39.0, var_s=209250.33333333334, slope=-0.015878787878787905, intercept=153.30560606060604)
+Modified Mann-Kendall: None
+Sen's Slope: None
+T-Test: {'t_stat': 5.696162671345349, 'p_value': 8.647598004191545e-08}
+ADF Test: (-11.657776094800015, 1.9664440188687245e-21, 0, 122, {'1%': -3.4851223522012855, '5%': -2.88553750045158, '10%': -2.5795685622144586}, 1731.298644810937)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 25288. ADF Test indicates non-stationarity in GC Total Duration for PID: 25288, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 25992
+Durbin-Watson: 1.9654374653160291
+Mann-Kendall: Mann_Kendall_Test(trend='no trend', h=False, p=0.6497581432789186, z=-0.45409820764177194, Tau=-0.016669363974753198, s=-927.0, var_s=4158363.0, slope=-4.000000000000004e-05, intercept=0.27366)
+Modified Mann-Kendall: None
+Sen's Slope: None
+T-Test: {'t_stat': 4.698822757858837, 'p_value': 3.834384967293965e-06}
+ADF Test: (-7.410716556570166, 7.146348308416757e-11, 1, 332, {'1%': -3.4502011472639724, '5%': -2.8702852297358983, '10%': -2.5714292194077513}, 2109.173521084254)
+Prediction: T-Test indicates a significant change in GC Pause Time for PID: 25992. ADF Test indicates non-stationarity in GC Pause Time for PID: 25992, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 25992
+Durbin-Watson: 0.6237913587201955
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.23304968810976812, z=-1.1925397144891308, Tau=-0.1119023214831598, s=-6223.0, var_s=27221641.58334501, slope=-0.30792936802973975, intercept=376.2667397769516)
+Sen's Slope: None
+T-Test: {'t_stat': 23.217299862513606, 'p_value': 1.3534908244537714e-71}
+ADF Test: (-3.350375441022519, 0.012771473191472187, 7, 326, {'1%': -3.4505694423906546, '5%': -2.8704469462727795, '10%': -2.5715154495841017}, 4521.197711883308)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 25992. ADF Test indicates non-stationarity in GC Total Duration for PID: 25992, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 2957
+Durbin-Watson: 1.6868822777604053
+Mann-Kendall: Mann_Kendall_Test(trend='decreasing', h=True, p=1.3834489109854076e-10, z=-6.417704137665122, Tau=-0.15169023936562306, s=-48359.0, var_s=56777632.333333336, slope=-5.7432432432432434e-05, intercept=0.14391554054054054)
+Modified Mann-Kendall: None
+Sen's Slope: Sens_Slope_Test(slope=-5.7432432432432434e-05, intercept=0.14391554054054054)
+T-Test: {'t_stat': 10.055878910111643, 'p_value': 1.7655539805019037e-22}
+ADF Test: (-13.104825795774097, 1.6808856269349563e-24, 2, 796, {'1%': -3.4385918508847646, '5%': -2.865177791819505, '10%': -2.568707096601096}, 2064.599146342871)
+Prediction: GC Pause Time for PID: 2957 does not show significant signs of software aging. T-Test indicates a significant change in GC Pause Time for PID: 2957. ADF Test indicates non-stationarity in GC Pause Time for PID: 2957, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 2957
+Durbin-Watson: 0.43888177961031277
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.5216243507768301, z=-0.6408435255881398, Tau=-0.05886430720104391, s=-18766.0, var_s=857419064.0089052, slope=-0.06405395683453223, intercept=368.98852877697834)
+Sen's Slope: None
+T-Test: {'t_stat': 43.92451895518321, 'p_value': 3.6596401752387364e-215}
+ADF Test: (-4.231621882450725, 0.0005822310993517867, 11, 787, {'1%': -3.438686413400388, '5%': -2.8652194721349424, '10%': -2.5687293001910008}, 10788.509686997)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 2957. ADF Test indicates non-stationarity in GC Total Duration for PID: 2957, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Pause Time for PID: 32762
+Durbin-Watson: 1.785687291695027
+Mann-Kendall: Mann_Kendall_Test(trend='no trend', h=False, p=0.8443512063301566, z=0.19633086290900353, Tau=0.006670621580647288, s=506.0, var_s=6616154.0, slope=2.2321428571428592e-05, intercept=0.38165848214285714)
+Modified Mann-Kendall: None
+Sen's Slope: None
+T-Test: {'t_stat': 8.531123455939595, 'p_value': 3.2711809953439267e-16}
+ADF Test: (-20.895805879167195, 0.0, 0, 389, {'1%': -3.447272819026727, '5%': -2.868998737588248, '10%': -2.5707433189709294}, 2014.3549529754432)
+Prediction: T-Test indicates a significant change in GC Pause Time for PID: 32762. ADF Test indicates non-stationarity in GC Pause Time for PID: 32762, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: GC Total Duration for PID: 32762
+Durbin-Watson: 0.4350529497178639
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.3756359502413569, z=-0.8859658119533528, Tau=-0.09649990112715048, s=-7320.0, var_s=68244800.32179089, slope=-0.1875944881889764, intercept=318.0611279527559)
+Sen's Slope: None
+T-Test: {'t_stat': 31.30654582891791, 'p_value': 2.4400416163971903e-108}
+ADF Test: (-2.7688605434506197, 0.06286132801348931, 7, 382, {'1%': -3.4475850438570115, '5%': -2.869135963767125, '10%': -2.5708164748773332}, 4968.291692108406)
+Prediction: T-Test indicates a significant change in GC Total Duration for PID: 32762.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.android.chrome
+Durbin-Watson: 0.23805728300091064
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.541538747120923, z=-0.6104877629836013, Tau=-0.04312841110770093, s=-6464.0, var_s=112076454.99963635, slope=-0.06785187526337969, intercept=451.55748788453434)
+Sen's Slope: None
+T-Test: {'t_stat': 58.17381830662805, 'p_value': 2.005720163619354e-236}
+ADF Test: (-3.828445617597901, 0.002629325941921564, 10, 537, {'1%': -3.4425861905056556, '5%': -2.8669372502674824, '10%': -2.5696445454608505}, 6989.725814631018)
+Prediction: T-Test indicates a significant change in Launch Time for com.android.chrome. ADF Test indicates non-stationarity in Launch Time for com.android.chrome, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.authenticator2
+Durbin-Watson: 0.27296886300295103
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.8590285902880768, z=-0.1776108661370454, Tau=-0.013845532622031713, s=-1783.0, var_s=100664498.68976171, slope=-0.03, intercept=558.605)
+Sen's Slope: None
+T-Test: {'t_stat': 49.733067959505355, 'p_value': 3.812997963308214e-197}
+ADF Test: (-5.444580087749087, 2.728518041566923e-06, 6, 501, {'1%': -3.443470002903981, '5%': -2.867326248740681, '10%': -2.569851849873108}, 6731.491602167018)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.authenticator2. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.authenticator2, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.chromecast.app
+Durbin-Watson: 0.7182556353195843
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.26698604327036346, z=-1.1100301298222666, Tau=-0.04965162262255979, s=-791.0, var_s=506506.06302945723, slope=-0.16260162601626016, intercept=270.4715447154472)
+Sen's Slope: None
+T-Test: {'t_stat': 18.116736033475743, 'p_value': 2.9538448949382206e-42}
+ADF Test: (-13.699281825403649, 1.2989273804808328e-25, 0, 178, {'1%': -3.467631519151906, '5%': -2.8779183721695567, '10%': -2.575501353364474}, 2372.1274042063033)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.chromecast.app. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.chromecast.app, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.classroom
+Durbin-Watson: 0.13258723635730285
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.8407611022188537, z=-0.2009200340679838, Tau=-0.01737030690138651, s=-1338.0, var_s=44280888.68548787, slope=-0.039839040656662814, intercept=689.8084519687059)
+Sen's Slope: None
+T-Test: {'t_stat': 68.83541895254234, 'p_value': 5.224317293233341e-221}
+ADF Test: (-6.41387169721783, 1.861925560044837e-08, 4, 388, {'1%': -3.4473167281607155, '5%': -2.869018036958473, '10%': -2.5707536074503134}, 5010.505944719089)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.classroom. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.classroom, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.docs
+Durbin-Watson: 0.47103218072379366
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='decreasing', h=True, p=0.0022186893719657874, z=-3.059280999233234, Tau=-0.27934111187371313, s=-1221.0, var_s=159030.68243674925, slope=-1.1951219512195121, intercept=177.5731707317073)
+Sen's Slope: Sens_Slope_Test(slope=-1.1951219512195121, intercept=177.5731707317073)
+T-Test: {'t_stat': 8.922023338539926, 'p_value': 3.9009439702732626e-14}
+ADF Test: (-5.037092920919402, 1.8732168190386832e-05, 0, 93, {'1%': -3.502704609582561, '5%': -2.8931578098779522, '10%': -2.583636712914788}, 1154.0063718167578)
+Prediction: Launch Time for com.google.android.apps.docs does not show significant signs of software aging. T-Test indicates a significant change in Launch Time for com.google.android.apps.docs. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.docs, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.docs.editors.docs
+Durbin-Watson: 0.21502636267502467
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='decreasing', h=True, p=0.0007260872809036201, z=-3.379534370042098, Tau=-0.1338298352516362, s=-2965.0, var_s=769206.0004065658, slope=-0.7685185185185185, intercept=792.6944444444445)
+Sen's Slope: Sens_Slope_Test(slope=-0.7685185185185185, intercept=792.6944444444445)
+T-Test: {'t_stat': 39.19620963757091, 'p_value': 1.5041178593082834e-98}
+ADF Test: (-5.042919691124816, 1.8238191584728117e-05, 4, 206, {'1%': -3.4624988216864776, '5%': -2.8756749365852587, '10%': -2.5743041549627677}, 2695.7709187628043)
+Prediction: Launch Time for com.google.android.apps.docs.editors.docs does not show significant signs of software aging. T-Test indicates a significant change in Launch Time for com.google.android.apps.docs.editors.docs. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.docs.editors.docs, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.docs.editors.sheets
+Durbin-Watson: 0.25580323404325783
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='decreasing', h=True, p=0.004683817453529304, z=-2.828011154254527, Tau=-0.09921904126523164, s=-10113.0, var_s=12785328.343120553, slope=-0.26436781609195403, intercept=605.6149425287356)
+Sen's Slope: Sens_Slope_Test(slope=-0.26436781609195403, intercept=605.6149425287356)
+T-Test: {'t_stat': 54.920181275307954, 'p_value': 7.170564965990352e-202}
+ADF Test: (-12.908532791306348, 4.103570735744647e-24, 1, 450, {'1%': -3.444965543297668, '5%': -2.8679842369272976, '10%': -2.5702025382716047}, 5905.353792110754)
+Prediction: Launch Time for com.google.android.apps.docs.editors.sheets does not show significant signs of software aging. T-Test indicates a significant change in Launch Time for com.google.android.apps.docs.editors.sheets. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.docs.editors.sheets, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.docs.editors.slides
+Durbin-Watson: 0.37608937272353915
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='decreasing', h=True, p=0.0008168316953744981, z=-3.347027286847452, Tau=-0.1010342284354152, s=-12055.0, var_s=12970116.239535302, slope=-0.2826086956521739, intercept=610.9565217391304)
+Sen's Slope: Sens_Slope_Test(slope=-0.2826086956521739, intercept=610.9565217391304)
+T-Test: {'t_stat': 47.2206905117474, 'p_value': 4.22577939213859e-184}
+ADF Test: (-23.128541999580676, 0.0, 0, 488, {'1%': -3.4438213751870337, '5%': -2.867480869596464, '10%': -2.5699342544006987}, 6560.571972197023)
+Prediction: Launch Time for com.google.android.apps.docs.editors.slides does not show significant signs of software aging. T-Test indicates a significant change in Launch Time for com.google.android.apps.docs.editors.slides. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.docs.editors.slides, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.maps
+Durbin-Watson: 0.028471114567559602
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.3230380098289758, z=-0.9882341030863331, Tau=-0.07044817927170868, s=-503.0, var_s=258040.43207627969, slope=-0.30517395182872437, intercept=899.1578501338091)
+Sen's Slope: None
+T-Test: {'t_stat': 87.87662065738942, 'p_value': 4.4205077280644913e-110}
+ADF Test: (-10.167882555353497, 7.21812938117032e-18, 0, 119, {'1%': -3.4865346059036564, '5%': -2.8861509858476264, '10%': -2.579896092790057}, 1294.291601402818)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.maps. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.maps, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.meetings
+Durbin-Watson: 0.4714829615697872
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.21337746251273426, z=-1.244331825606577, Tau=-0.07605099705786204, s=-29080.0, var_s=546118032.5309132, slope=-0.06639004149377593, intercept=372.0124481327801)
+Sen's Slope: None
+T-Test: {'t_stat': 60.53009572954002, 'p_value': 7.45774057e-315}
+ADF Test: (-3.8945591702832294, 0.002075255498764423, 14, 860, {'1%': -3.4379766581448803, '5%': -2.8649066016199836, '10%': -2.5685626352082207}, 11141.124162846745)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.meetings. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.meetings, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.photos
+Durbin-Watson: 0.18605630713746413
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.7555068774033025, z=-0.3113864186551153, Tau=-0.028720280382684475, s=-3032.0, var_s=94748542.8418666, slope=-0.05650775389455642, intercept=555.4685295188007)
+Sen's Slope: None
+T-Test: {'t_stat': 58.0777633794157, 'p_value': 1.2233214506477218e-213}
+ADF Test: (-5.96673959150732, 1.9795600108627958e-07, 5, 454, {'1%': -3.444836032925901, '5%': -2.8679272692747415, '10%': -2.5701721745036776}, 5910.561426610603)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.photos. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.photos, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.tachyon
+Durbin-Watson: 0.38611612879036034
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='increasing', h=True, p=0.0022078670283194324, z=3.060745462296614, Tau=0.14230147876383556, s=36731.0, var_s=144008268.3196478, slope=0.2135593220338983, intercept=309.3322033898305)
+Sen's Slope: Sens_Slope_Test(slope=0.2135593220338983, intercept=309.3322033898305)
+T-Test: {'t_stat': 54.892917957702544, 'p_value': 3.747062194131881e-259}
+ADF Test: (-2.9356475997601366, 0.041356938331969996, 15, 703, {'1%': -3.4396861854831964, '5%': -2.865660062273053, '10%': -2.5689640195342456}, 9462.191401824772)
+Prediction: Warning: Launch Time for com.google.android.apps.tachyon shows an increasing trend (slope = 0.2135593220338983), indicating potential software aging. T-Test indicates a significant change in Launch Time for com.google.android.apps.tachyon. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.tachyon, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.translate
+Durbin-Watson: 0.3695471036761788
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.6441465981404562, z=-0.4619089742276346, Tau=-0.021812777304220488, s=-998.0, var_s=4658837.006395812, slope=-0.064, intercept=733.664)
+Sen's Slope: None
+T-Test: {'t_stat': 34.90051891682231, 'p_value': 5.370226493987075e-108}
+ADF Test: (-4.747926156334194, 6.833434430146306e-05, 6, 296, {'1%': -3.452636878592149, '5%': -2.8713543954331433, '10%': -2.5719993576515705}, 4082.0137388438425)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.translate. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.translate, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.youtube.kids
+Durbin-Watson: 0.7495829619254739
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.3011853674289924, z=1.0338947546976684, Tau=0.035943692770261035, s=1315.0, var_s=1615243.7394762808, slope=0.08823529411764706, intercept=519.0882352941177)
+Sen's Slope: None
+T-Test: {'t_stat': 22.41039734218599, 'p_value': 1.4690712794125755e-63}
+ADF Test: (-10.358244228141903, 2.4345486771670473e-18, 1, 269, {'1%': -3.4548957220044336, '5%': -2.8723451788613157, '10%': -2.572527778361272}, 3714.6181200306905)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.youtube.kids. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.youtube.kids, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.apps.youtube.music
+Durbin-Watson: 0.11373080558239577
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.9878503189624854, z=-0.015227955524418803, Tau=-0.0011994002998500749, s=-8.0, var_s=211306.5116751012, slope=0.0, intercept=800.0)
+Sen's Slope: None
+T-Test: {'t_stat': 42.86916590649176, 'p_value': 1.449913051112397e-72}
+ADF Test: (-5.58311719860358, 1.3821520748755043e-06, 5, 110, {'1%': -3.4912451337340342, '5%': -2.8881954545454547, '10%': -2.5809876033057852}, 1359.412358458085)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.apps.youtube.music. ADF Test indicates non-stationarity in Launch Time for com.google.android.apps.youtube.music, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.calendar
+Durbin-Watson: 0.6077761146198944
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.5108593850984042, z=-0.6575001336081296, Tau=-0.014489936040516696, s=-5888.0, var_s=80167138.26149406, slope=-0.017326732673267328, intercept=472.8056930693069)
+Sen's Slope: None
+T-Test: {'t_stat': 48.18592943249481, 'p_value': 1.3638850261938807e-251}
+ADF Test: (-32.72723609547771, 0.0, 0, 901, {'1%': -3.437628610719785, '5%': -2.8647531504389767, '10%': -2.5684808963896324}, 12546.9134617603)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.calendar. ADF Test indicates non-stationarity in Launch Time for com.google.android.calendar, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.gm
+Durbin-Watson: 0.22801982382914343
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.4511187307557658, z=0.7535512427810224, Tau=0.03928077455048409, s=1136.0, var_s=2268642.9098168723, slope=0.14835978835978836, intercept=749.1968253968254)
+Sen's Slope: None
+T-Test: {'t_stat': 42.92454489885029, 'p_value': 1.3566588223884431e-114}
+ADF Test: (-4.517999127524819, 0.00018242717423010163, 5, 235, {'1%': -3.4584868856997004, '5%': -2.873918902362675, '10%': -2.573367247623359}, 3120.7499865192385)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.gm. ADF Test indicates non-stationarity in Launch Time for com.google.android.gm, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.googlequicksearchbox
+Durbin-Watson: 0.3380815718081955
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.2943535233062704, z=-1.0486189658624325, Tau=-0.039735568967962556, s=-10086.0, var_s=92494602.10028796, slope=-0.050595238095238096, intercept=401.01190476190476)
+Sen's Slope: None
+T-Test: {'t_stat': 56.36101139767345, 'p_value': 1.0895499745598392e-264}
+ADF Test: (-10.554707778445001, 8.007746549322188e-19, 3, 709, {'1%': -3.439606888036868, '5%': -2.865625121924057, '10%': -2.5689454046801052}, 9335.432118071978)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.googlequicksearchbox. ADF Test indicates non-stationarity in Launch Time for com.google.android.googlequicksearchbox, suggesting a potential trend.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.android.youtube
+Durbin-Watson: 0.3205109121275285
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.42615700434835313, z=0.7957850126792015, Tau=0.060109289617486336, s=110.0, var_s=18761.237643278604, slope=0.823076923076923, intercept=818.3076923076923)
+Sen's Slope: None
+T-Test: {'t_stat': 16.05583181630034, 'p_value': 2.1638032729901388e-23}
+ADF Test: (-2.501579166640121, 0.11509056911950838, 2, 58, {'1%': -3.548493559596539, '5%': -2.912836594776334, '10%': -2.594129155766944}, 711.907211128159)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.android.youtube.
+
+--------------------------------------------------
+
+Metric: Launch Time for com.google.earth
+Durbin-Watson: 0.050834366246698244
+Mann-Kendall: None
+Modified Mann-Kendall: Modified_Mann_Kendall_Test_Hamed_Rao_Approach(trend='no trend', h=False, p=0.421489654794591, z=-0.8038395334953807, Tau=-0.08642137277118492, s=-7246.0, var_s=81234040.83306506, slope=-0.17857142857142858, intercept=699.5178571428571)
+Sen's Slope: None
+T-Test: {'t_stat': 90.07263832426364, 'p_value': 8.077513627657034e-272}
+ADF Test: (-2.7083492995872596, 0.0726045857831655, 9, 400, {'1%': -3.4468044036406247, '5%': -2.868792838125, '10%': -2.57063355625}, 4864.858082525638)
+Prediction: T-Test indicates a significant change in Launch Time for com.google.earth.
+
+--------------------------------------------------
+
